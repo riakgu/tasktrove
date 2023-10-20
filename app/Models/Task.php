@@ -12,7 +12,7 @@ class Task extends Model
     protected $primaryKey = 'task_id';
     protected $keyType = 'int';
     public $incrementing = true;
-    public $timestamps = false;
+    public $timestamps = true;
     protected $fillable = [
         'user_id',
         'task_name',
