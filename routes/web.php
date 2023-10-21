@@ -23,3 +23,7 @@ Route::controller(\App\Http\Controllers\AuthController::class)->group(function (
     Route::get('/register', 'register')->name('register');
     Route::post('/register', 'doRegister');
 });
+
+Route::controller(\App\Http\Controllers\DashboardController::class)->group(function () {
+    Route::get('/dashboard', 'index');
+});
