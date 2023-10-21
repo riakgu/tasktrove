@@ -22,7 +22,7 @@
 
         @include('partials.header')
 
-        @yield('main-content')
+        @yield('content')
 
         @include('partials.header')
 
