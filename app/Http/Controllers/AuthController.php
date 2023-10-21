@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -31,5 +33,28 @@ class AuthController extends Controller
         return back()->withErrors([
             'error' => 'The provided credentials do not match our records.'
         ]);
+    }
+
+    public function register() {
+        $data = [
+            'title' => 'Register'
+        ];
+
+        return view('auth.register', $data);
+    }
+
+    public function doRegister(Request $request): RedirectResponse {
+        $validated = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|confirmed|min:8',
+        ]);
+
+        $validated['password'] = Hash::make($validated['password']);
+
+        User::query()->create($validated);
+
+        return redirect('/register')->with('success', 'Registration success!' );
+
     }
 }
