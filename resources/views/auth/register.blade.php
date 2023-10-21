@@ -10,6 +10,11 @@
         <p class="auth-subtitle mb-5">
             Input your data to register to our website.
         </p>
+        @if (session('success'))
+            <div class="alert alert-success mb-5">
+                {{ session('success') }}
+            </div>
+        @endif
         <form action="/register" method="post" class="form">
             @csrf
             <div class="form-group position-relative has-icon-left mb-4">
