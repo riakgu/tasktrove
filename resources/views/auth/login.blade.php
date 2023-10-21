@@ -10,7 +10,7 @@
         <p class="auth-subtitle mb-5">
             Log in with your data that you entered during registration.
         </p>
-        @error('email')
+        @error('error')
         <div class="alert alert-danger mb-5">
             {{ $message }}
         </div>
