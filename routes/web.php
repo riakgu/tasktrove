@@ -20,4 +20,6 @@ Route::get('/', function () {
 Route::controller(\App\Http\Controllers\AuthController::class)->group(function () {
     Route::get('/login', 'login')->name('login');
     Route::post('/login', 'doLogin');
+    Route::get('/register', 'register')->name('register');
+    Route::post('/register', 'doRegister');
 });
