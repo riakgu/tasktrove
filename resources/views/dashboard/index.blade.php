@@ -22,8 +22,8 @@
                                 <div class="card-body px-4 py-4-5">
                                     <div class="row">
                                         <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                            <h6 class="text-muted font-semibold">Profile Views</h6>
-                                            <h3 class="font-extrabold mb-0">112.000</h3>
+                                            <h6 class="text-muted font-semibold">Undone Task</h6>
+                                            <h3 class="font-extrabold mb-0">{{ $undone_task }}</h3>
                                         </div>
                                     </div>
                                 </div>
