@@ -36,4 +36,5 @@ Route::controller(\App\Http\Controllers\SettingsController::class)->group(functi
 
 Route::controller(\App\Http\Controllers\ChatbotController::class)->group(function () {
     Route::get('/chatbot', 'index');
+    Route::post('/chatbot', 'chatbot');
 });

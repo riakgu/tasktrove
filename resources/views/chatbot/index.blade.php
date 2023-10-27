@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('style')
-    <link rel="stylesheet" href="./assets/compiled/css/ui-widgets-chatbox.css" />
+    <link rel="stylesheet" href="assets/css/chatbot.css" />
 @endsection
 
 @section('content')
@@ -33,7 +33,7 @@
                             <div class="card-header">
                                 <div class="media d-flex align-items-center">
                                     <div class="avatar me-3">
-                                        <img src="./assets/compiled/jpg/1.jpg" alt="" srcset="" />
+                                        <img src="/assets/images/jpg/1.jpg" alt="" srcset="" />
                                         <span class="avatar-status bg-success"></span>
                                     </div>
                                     <div class="name flex-grow-1">
@@ -86,5 +86,7 @@
 @endsection
 
 @section('script')
+    <script src="assets/extensions/jquery/jquery.min.js"></script>
+    <script src="assets/js/chatbot.js"></script>
 
 @endsection
