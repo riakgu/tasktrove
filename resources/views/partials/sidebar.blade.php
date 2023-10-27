@@ -42,7 +42,7 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item {{ request()->is('chatbot') ? 'active' : '' }}">
+                <li class="sidebar-item {{ request()->is('settings') ? 'active' : '' }}">
                     <a href="settings.html" class="sidebar-link">
                         <i class="bi bi-gear-fill"></i>
                         <span>Settings</span>
