@@ -27,3 +27,7 @@ Route::controller(\App\Http\Controllers\AuthController::class)->group(function (
 Route::controller(\App\Http\Controllers\DashboardController::class)->group(function () {
     Route::get('/dashboard', 'index');
 });
+
+Route::controller(\App\Http\Controllers\SettingsController::class)->group(function () {
+    Route::get('/settings', 'index');
+});
