@@ -33,3 +33,7 @@ Route::controller(\App\Http\Controllers\SettingsController::class)->group(functi
     Route::put('/settings/profile', 'profile');
     Route::put('/settings/password', 'password');
 });
+
+Route::controller(\App\Http\Controllers\ChatbotController::class)->group(function () {
+    Route::get('/chatbot', 'index');
+});
