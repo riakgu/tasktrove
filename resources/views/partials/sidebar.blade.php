@@ -48,9 +48,18 @@
                         <span>Settings</span>
                     </a>
                 </li>
-
             </ul>
+        </div>
 
+        <div class="sidebar-footer position-absolute bottom-0">
+            <ul class="menu">
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="bi bi-box-arrow-left"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
         </div>
 
     </div>
