@@ -31,4 +31,5 @@ Route::controller(\App\Http\Controllers\DashboardController::class)->group(funct
 Route::controller(\App\Http\Controllers\SettingsController::class)->group(function () {
     Route::get('/settings', 'index');
     Route::put('/settings/profile', 'profile');
+    Route::put('/settings/password', 'password');
 });
