@@ -29,7 +29,7 @@
             <section class="section">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card ">
+                        <div class="card " style="height: 500px;">
                             <div class="card-header">
                                 <div class="media d-flex align-items-center">
                                     <div class="avatar me-3">
