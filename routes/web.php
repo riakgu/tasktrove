@@ -38,3 +38,6 @@ Route::controller(\App\Http\Controllers\ChatbotController::class)->group(functio
     Route::get('/chatbot', 'index');
     Route::post('/chatbot', 'chatbot');
 });
+
+Route::resource('tasks', \App\Http\Controllers\TaskController::class);
+

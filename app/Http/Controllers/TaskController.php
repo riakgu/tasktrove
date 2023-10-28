@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Task;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
@@ -11,7 +12,12 @@ class TaskController extends Controller
      */
     public function index()
     {
-        //
+        $data = [
+            "title" => "Tasks",
+            'tasks' => Task::query()->where('user_id', auth()->user()->user_id)->get(),
+        ];
+
+        return view('settings.index', $data);
     }
 
     /**
@@ -19,7 +25,11 @@ class TaskController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            "title" => "Create Task",
+        ];
+
+        return view('tasks.create', $data);
     }
 
     /**
@@ -33,17 +43,27 @@ class TaskController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Task $task)
     {
-        //
+        $data = [
+            'title' => 'Show Task',
+            'task' => $task,
+        ];
+
+        return view('tasks.show', $data);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Task $task)
     {
-        //
+        $data = [
+            'title' => 'Edit Task',
+            'task' => $task,
+        ];
+
+        return view('tasks.edit', $data);
     }
 
     /**
