@@ -28,25 +28,6 @@
                             </div>
                         </div>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton"
-                        style="min-width: 11rem">
-                        <li>
-                            <a class="dropdown-item" href="settings.html"><i class="icon-mid bi bi-gear me-2"></i>
-                                Settings</a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider" />
-                        </li>
-                        <li>
-                            <form action="#" method="post">
-
-                                <button type="submit" class="dropdown-item">
-                                    <i class="icon-mid bi bi-box-arrow-left me-2"></i>
-                                    Logout
-                                </button>
-                            </form>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
