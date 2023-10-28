@@ -17,10 +17,10 @@
                     <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
                         <div class="user-menu d-flex">
                             <div class="user-name d-flex align-items-center me-2">
-                                <div class="user-name text-end me-3">
-                                    <h6 class="mb-0 text-gray-600">Rizky</h6>
-                                    <p class="mb-0 text-sm text-gray-600">User</p>
-                                </div>                                        </div>
+                                <div class="user-name text-end">
+                                    <h6 class="mb-0 text-gray-600">{{ auth()->user()->name }}</h6>
+                                </div>
+                            </div>
                             <div class="user-img d-flex align-items-center">
                                 <div class="avatar bg-secondary me-3">
                                     <span class="avatar-content">{{ substr(auth()->user()->name, 0, 1) }}</span>
