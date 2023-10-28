@@ -83,15 +83,19 @@
                                         </td>
                                     @endif
                                     <td>
-                                        <a href="show-task.html" class="btn icon btn-success"
+                                        <a href="/tasks/{{ $task->task_id }}" class="btn icon btn-success"
                                         ><i class="bi bi-eye"></i
                                             ></a>
-                                        <a href="edit-task.html" class="btn icon btn-primary"
+                                        <a href="/tasks/{{ $task->task_id }}/edit" class="btn icon btn-primary"
                                         ><i class="bi bi-pencil"></i
                                             ></a>
-                                        <a href="#" class="btn icon btn-danger"
-                                        ><i class="bi bi-trash"></i
-                                            ></a>
+                                        <form action="/tasks/{{ $task->task_id }}" method="post" class="d-inline">
+                                            @method('delete')
+                                            @csrf
+                                            <button class="btn icon btn-danger">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach
