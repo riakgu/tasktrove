@@ -2,7 +2,7 @@
 
 @section('style')
     <link rel="stylesheet" href="/../assets/extensions/simple-datatables/style.css" />
-    <link rel="stylesheet" href="/../assets/css/table-datatable.css" />
+    <link rel="stylesheet" href="/../assets/css/datatable.css" />
 @endsection
 
 @section('content')
@@ -114,5 +114,5 @@
 
 @section('script')
     <script src="/../assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
-    <script src="/../assets/js/simple-datatables.js"></script>
+    <script src="/../assets/js/datatable.js"></script>
 @endsection
