@@ -22,8 +22,9 @@
                                     <p class="mb-0 text-sm text-gray-600">User</p>
                                 </div>                                        </div>
                             <div class="user-img d-flex align-items-center">
-                                <div class="avatar avatar-md">
-                                    <img src="/../assets/images/jpg/1.jpg" />
+                                <div class="avatar bg-secondary me-3">
+                                    <span class="avatar-content">{{ substr(auth()->user()->name, 0, 1) }}</span>
+                                    <span class="avatar-status bg-success"></span>
                                 </div>
                             </div>
                         </div>
