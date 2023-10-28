@@ -26,9 +26,9 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h4>Task List</h4>
-                        <button type="button" class="btn btn-secondary me-1 mb-1">
+                        <a href="/tasks/create" class="btn btn-secondary me-1 mb-1">
                             <i data-feather="edit"></i> Create Task
-                        </button>
+                        </a>
                     </div>
 
                     <div class="card-body">
