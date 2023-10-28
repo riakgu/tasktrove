@@ -1,7 +1,9 @@
 @extends('layouts.main')
 
 @section('style')
-    <link rel="stylesheet" href="assets/extensions/flatpickr/flatpickr.min.css" />
+    <link rel="stylesheet" href="/../assets/css/app.css" />
+
+    <link rel="stylesheet" href="/../assets/extensions/flatpickr/flatpickr.min.css" />
 
 @endsection
 
@@ -75,6 +77,9 @@
 @endsection
 
 @section('script')
-    <script src="assets/extensions/flatpickr/flatpickr.min.js"></script>
-    <script src="assets/js/date-picker.js"></script>
+    <script src="/../assets/extensions/flatpickr/flatpickr.min.js"></script>
+    <script src="/../assets/js/date-picker.js"></script>
+    <script src="/../assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+    <script src="/../assets/js/app.js"></script>
 @endsection

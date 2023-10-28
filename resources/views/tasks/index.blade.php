@@ -1,9 +1,9 @@
 @extends('layouts.main')
 
 @section('style')
-    <link rel="stylesheet" href="assets/extensions/simple-datatables/style.css" />
+    <link rel="stylesheet" href="/../assets/extensions/simple-datatables/style.css" />
 
-    <link rel="stylesheet" href="assets/css/table-datatable.css" />
+    <link rel="stylesheet" href="/../assets/css/table-datatable.css" />
 @endsection
 
 @section('content')
@@ -64,7 +64,7 @@
                                         </td>
                                     @endif
                                     <td>
-                                        <a href="show-task.html" class="btn icon btn-success"
+                                        <a href="/tasks/{{ $task->task_id }}" class="btn icon btn-success"
                                         ><i class="bi bi-eye"></i
                                             ></a>
                                         <a href="edit-task.html" class="btn icon btn-primary"
@@ -89,6 +89,6 @@
 @endsection
 
 @section('script')
-    <script src="assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
-    <script src="assets/js/simple-datatables.js"></script>
+    <script src="/../assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
+    <script src="/../assets/js/simple-datatables.js"></script>
 @endsection
