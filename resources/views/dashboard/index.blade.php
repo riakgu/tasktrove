@@ -47,8 +47,11 @@
 
             <section class="section">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header d-flex justify-content-between align-items-center">
                         <h4>Deadline Today</h4>
+                        <a href="/tasks/create" class="btn btn-secondary me-1 mb-1">
+                            <i data-feather="edit"></i> Create Task
+                        </a>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped" id="table1">
