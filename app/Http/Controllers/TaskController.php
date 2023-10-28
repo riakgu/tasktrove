@@ -17,7 +17,7 @@ class TaskController extends Controller
             'tasks' => Task::query()->where('user_id', auth()->user()->user_id)->get(),
         ];
 
-        return view('settings.index', $data);
+        return view('tasks.index', $data);
     }
 
     /**
