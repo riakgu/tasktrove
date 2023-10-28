@@ -1,9 +1,9 @@
 @extends('layouts.main')
 
 @section('style')
-    <link rel="stylesheet" href="assets/extensions/simple-datatables/style.css" />
+    <link rel="stylesheet" href="/../assets/extensions/simple-datatables/style.css" />
 
-    <link rel="stylesheet" href="assets/css/table-datatable.css" /
+    <link rel="stylesheet" href="/../assets/css/table-datatable.css" /
 @endsection
 
 @section('content')
@@ -114,6 +114,6 @@
 @endsection
 
 @section('script')
-    <script src="assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
-    <script src="assets/js/simple-datatables.js"></script>
+    <script src="/../assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
+    <script src="/../assets/js/simple-datatables.js"></script>
 @endsection
