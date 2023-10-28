@@ -21,7 +21,7 @@
                             <div class="card-header">
                                 <div class="media d-flex align-items-center">
                                     <div class="avatar me-3">
-                                        <img src="/../assets/images/jpg/1.jpg" alt="" srcset="" />
+                                        <img src="/../assets/images/svg/ChatGPT_logo.svg" alt="" srcset="" />
                                         <span class="avatar-status bg-success"></span>
                                     </div>
                                     <div class="name flex-grow-1">
