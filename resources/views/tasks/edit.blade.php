@@ -2,7 +2,6 @@
 
 @section('style')
     <link rel="stylesheet" href="/../assets/extensions/flatpickr/flatpickr.min.css" />
-
 @endsection
 
 @section('content')

@@ -29,9 +29,6 @@
     </div>
 
 </div>
-<script src="/../assets/js/dark.js"></script>
-<script src="/../assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-
 <script src="/../assets/js/app.js"></script>
 
 @yield('script')

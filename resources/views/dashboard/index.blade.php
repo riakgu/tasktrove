@@ -2,8 +2,7 @@
 
 @section('style')
     <link rel="stylesheet" href="/../assets/extensions/simple-datatables/style.css" />
-
-    <link rel="stylesheet" href="/../assets/css/table-datatable.css" /
+    <link rel="stylesheet" href="/../assets/css/table-datatable.css" />
 @endsection
 
 @section('content')

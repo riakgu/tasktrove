@@ -88,5 +88,4 @@
 @section('script')
     <script src="/../assets/extensions/jquery/jquery.min.js"></script>
     <script src="/../assets/js/chatbot.js"></script>
-
 @endsection
