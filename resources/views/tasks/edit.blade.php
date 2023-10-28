@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('style')
-    <link rel="stylesheet" href="assets/extensions/flatpickr/flatpickr.min.css" />
+    <link rel="stylesheet" href="/../assets/extensions/flatpickr/flatpickr.min.css" />
 
 @endsection
 
@@ -25,74 +25,85 @@
                         <div class="card">
                             <div class="card-content">
                                 <div class="card-body">
-                                    <form action="add-task.html" method="post" class="form">
-
+                                    <form action="/tasks/{{$task->task_id}}" method="post" class="form">
+                                        @method('put')
+                                        @csrf
                                         <div class="row">
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="task_name">Task Name</label>
                                                     <input type="text"
-                                                           class="form-control "
+                                                           class="form-control @error('task_name') is-invalid @enderror"
                                                            placeholder="Task Name" name="task_name"
-                                                           value="" />
+                                                           value="{{ old('task_name', $task->task_name) }}" />
+                                                    @error('task_name')
                                                     <div class="invalid-feedback">
                                                         <i class="bx bx-radio-circle"></i>
                                                         {{ $message }}
                                                     </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <label for="last-name-column">Status</label>
                                                 <div class="input-group mb-3">
                                                     <label class="input-group-text" for="status">Options</label>
-                                                    <select class="form-select "
+                                                    <select class="form-select @error('status') is-invalid @enderror"
                                                             name="status">
-                                                        <option selected value="">Choose...</option>
+                                                        <option selected value="{{ old('status', $task->status) }}">Choose...</option>
                                                         <option value="1">One</option>
                                                         <option value="2">Two</option>
                                                         <option value="3">Three</option>
                                                     </select>
+                                                    @error('status')
                                                     <div class="invalid-feedback">
                                                         <i class="bx bx-radio-circle"></i>
                                                         {{ $message }}
                                                     </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="started">Started</label>
                                                     <input type="date"
-                                                           class="form-control flatpickr-no-config "
+                                                           class="form-control flatpickr-no-config @error('started') is-invalid @enderror"
                                                            placeholder="Select date.." name="started"
-                                                           value="" />
+                                                           value="{{ old('started', $task->started) }}" />
+                                                    @error('started')
                                                     <div class="invalid-feedback">
                                                         <i class="bx bx-radio-circle"></i>
                                                         {{ $message }}
                                                     </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="deadline">Deadline</label>
                                                     <input type="date"
-                                                           class="form-control flatpickr-no-config "
+                                                           class="form-control flatpickr-no-config @error('deadline') is-invalid @enderror"
                                                            placeholder="Select date.." name="deadline"
-                                                           value="" />
+                                                           value="{{ old('deadline', $task->deadline) }}" />
+                                                    @error('deadline')
                                                     <div class="invalid-feedback">
                                                         <i class="bx bx-radio-circle"></i>
                                                         {{ $message }}
                                                     </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-md-12 col-12">
                                                 <div class="form-group">
                                                     <label for="description">Description</label>
-                                                    <textarea class="form-control " placeholder="Description" name="description"
-                                                              rows="3"></textarea>
+                                                    <textarea class="form-control @error('description') is-invalid @enderror" placeholder="Description" name="description"
+                                                              rows="3">{{ old('description', $task->description) }}</textarea>
+                                                    @error('description')
                                                     <div class="invalid-feedback">
                                                         <i class="bx bx-radio-circle"></i>
                                                         {{ $message }}
                                                     </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-12 mt-3 d-flex justify-content-end">
@@ -119,6 +130,6 @@
 @endsection
 
 @section('script')
-    <script src="assets/extensions/flatpickr/flatpickr.min.js"></script>
-    <script src="assets/js/date-picker.js"></script>
+    <script src="/../assets/extensions/flatpickr/flatpickr.min.js"></script>
+    <script src="/../assets/js/date-picker.js"></script>
 @endsection
