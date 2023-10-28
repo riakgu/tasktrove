@@ -3,7 +3,7 @@
         <div class="sidebar-header position-relative">
             <div class="d-flex justify-content-center align-items-center">
                 <div class="logo">
-                    <a href="dashboard.html"><img src="assets/images/svg/logo2.svg" alt="Logo" srcset="" /></a>
+                    <a href="#"><img src="assets/images/svg/logo2.svg" alt="Logo" srcset="" /></a>
                 </div>
             </div>
         </div>
@@ -53,23 +53,6 @@
                 </li>
             </ul>
         </div>
-
-
-
-
-        {{--        <div class="sidebar-footer position-absolute bottom-0">--}}
-{{--            <ul class="menu">--}}
-{{--                <li class="sidebar-item">--}}
-{{--                    <form action="/logout" method="post">--}}
-{{--                        @csrf--}}
-{{--                        <button type="submit" class="sidebar-link border-0 bg-0">--}}
-{{--                            <i class="bi bi-box-arrow-left"></i>--}}
-{{--                            <span>Logout</span>--}}
-{{--                        </button>--}}
-{{--                    </form>--}}
-{{--                </li>--}}
-{{--            </ul>--}}
-{{--        </div>--}}
 
     </div>
 </div>
