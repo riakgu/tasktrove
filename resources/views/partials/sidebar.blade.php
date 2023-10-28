@@ -43,13 +43,33 @@
         <div class="sidebar-footer position-absolute bottom-0">
             <ul class="menu">
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                        <i class="bi bi-box-arrow-left"></i>
-                        <span>Logout</span>
-                    </a>
+                    <form method="POST" action="/logout">
+                        @csrf
+                        <button type="submit" class="sidebar-link" style="background: none; border: none;">
+                            <i class="bi bi-box-arrow-left"></i>
+                            <span>Logout</span>
+                        </button>
+                    </form>
                 </li>
             </ul>
         </div>
+
+
+
+
+        {{--        <div class="sidebar-footer position-absolute bottom-0">--}}
+{{--            <ul class="menu">--}}
+{{--                <li class="sidebar-item">--}}
+{{--                    <form action="/logout" method="post">--}}
+{{--                        @csrf--}}
+{{--                        <button type="submit" class="sidebar-link border-0 bg-0">--}}
+{{--                            <i class="bi bi-box-arrow-left"></i>--}}
+{{--                            <span>Logout</span>--}}
+{{--                        </button>--}}
+{{--                    </form>--}}
+{{--                </li>--}}
+{{--            </ul>--}}
+{{--        </div>--}}
 
     </div>
 </div>
