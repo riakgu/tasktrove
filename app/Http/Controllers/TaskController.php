@@ -102,8 +102,10 @@ class TaskController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Task $task)
     {
-        //
+        Task::destroy($task->task_id);
+
+        return redirect('/tasks');
     }
 }
