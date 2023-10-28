@@ -37,7 +37,19 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'task_name' => 'required',
+            'description' => 'required',
+            'started' => 'required',
+            'deadline' => 'required',
+            'status' => 'required',
+        ]);
+
+        $validated['user_id'] = auth()->user()->user_id;
+
+        Task::query()->create($validated);
+
+        return redirect('/tasks');
     }
 
     /**
