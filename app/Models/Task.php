@@ -10,9 +10,6 @@ class Task extends Model
 {
     protected $table = 'tasks';
     protected $primaryKey = 'task_id';
-    protected $keyType = 'int';
-    public $incrementing = true;
-    public $timestamps = true;
     protected $fillable = [
         'user_id',
         'task_name',
