@@ -3,6 +3,8 @@
 @section('style')
     <link rel="stylesheet" href="/../assets/extensions/simple-datatables/style.css" />
     <link rel="stylesheet" href="/../assets/css/datatable.css" />
+
+    <link rel="stylesheet" href="/../assets/extensions/sweetalert2/sweetalert2.min.css" />
 @endsection
 
 @section('content')
@@ -94,4 +96,23 @@
 @section('script')
     <script src="/../assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
     <script src="/../assets/js/datatable.js"></script>
+
+    <script src="/../assets/extensions/sweetalert2/sweetalert2.min.js"></script>
+    <script src="/../assets/js/sweetalert2.js"></script>
+    <script>
+        @if (session('success'))
+        Swal2.fire({
+            icon: "success",
+            title: "Success",
+            text: "{{ session('success') }}",
+        })
+        @endif
+        @if (session('error'))
+        Swal2.fire({
+            icon: "error",
+            title: "Error",
+            text: "{{ session('error') }}",
+        })
+        @endif
+    </script>
 @endsection

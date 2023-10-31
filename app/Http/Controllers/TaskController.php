@@ -49,7 +49,7 @@ class TaskController extends Controller
 
         Task::query()->create($validated);
 
-        return redirect('/tasks');
+        return redirect('/tasks')->with('success', 'Task has been created!' );
     }
 
     /**
@@ -96,7 +96,7 @@ class TaskController extends Controller
         $task::query()->where('task_id', $task->task_id)
             ->update($validated);
 
-        return redirect('/tasks');
+        return redirect('/tasks')->with('success', 'Task has been updated!' );
     }
 
     /**
