@@ -36,7 +36,7 @@ class SettingsController extends Controller
                 ->update($validated);
         }
 
-        return redirect('/settings');
+        return redirect('/settings')->with('success', 'Profile has been updated!' );
     }
 
     public function password(Request $request) {

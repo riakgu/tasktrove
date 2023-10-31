@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('style')
-
+    <link rel="stylesheet" href="/../assets/extensions/sweetalert2/sweetalert2.min.css" />
 @endsection
 
 @section('content')
@@ -153,5 +153,22 @@
 @endsection
 
 @section('script')
-
+    <script src="/../assets/extensions/sweetalert2/sweetalert2.min.js"></script>
+    <script src="/../assets/js/sweetalert2.js"></script>
+    <script>
+        @if (session('success'))
+        Swal2.fire({
+            icon: "success",
+            title: "Success",
+            text: "{{ session('success') }}",
+        })
+        @endif
+        @if (session('error'))
+        Swal2.fire({
+            icon: "error",
+            title: "Error",
+            text: "{{ session('error') }}",
+        })
+        @endif
+    </script>
 @endsection
