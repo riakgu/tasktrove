@@ -20,11 +20,21 @@ class SettingsController extends Controller
     public function profile(Request $request) {
         $validated = $request->validate([
             'name' => 'required',
-            'email' => 'required|email|unique:users',
+            'email' => 'email',
         ]);
 
-        User::query()->where('user_id', auth()->user()->user_id)
-            ->update($validated);
+        $current_email = auth()->user()->email;
+
+        if($validated['email'] === $current_email) {
+            User::query()->where('user_id', auth()->user()->user_id)
+                ->update(['name' => $validated['name']]);
+        } else {
+            $request->validate([
+                'email' => 'unique:users',
+            ]);
+            User::query()->where('user_id', auth()->user()->user_id)
+                ->update($validated);
+        }
 
         return redirect('/settings');
     }
