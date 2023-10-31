@@ -106,6 +106,6 @@ class TaskController extends Controller
     {
         Task::destroy($task->task_id);
 
-        return redirect('/tasks');
+        return redirect('/tasks')->with('success', 'Task has been deleted!' );
     }
 }

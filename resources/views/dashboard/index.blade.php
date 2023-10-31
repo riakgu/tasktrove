@@ -3,6 +3,8 @@
 @section('style')
     <link rel="stylesheet" href="/../assets/extensions/simple-datatables/style.css" />
     <link rel="stylesheet" href="/../assets/css/datatable.css" />
+
+    <link rel="stylesheet" href="/../assets/extensions/sweetalert2/sweetalert2.min.css" />
 @endsection
 
 @section('content')
@@ -91,13 +93,14 @@
                                         <a href="/tasks/{{ $task->task_id }}/edit" class="btn icon btn-primary"
                                         ><i class="bi bi-pencil"></i
                                             ></a>
-                                        <form action="/tasks/{{ $task->task_id }}" method="post" class="d-inline">
+                                        <form action="/tasks/{{ $task->task_id }}" method="post" class="d-inline delete-task">
                                             @method('delete')
                                             @csrf
-                                            <button class="btn icon btn-danger">
+                                            <button class="btn icon btn-danger delete-task-btn">
                                                 <i class="bi bi-trash"></i>
                                             </button>
                                         </form>
+
                                     </td>
                                 </tr>
                             @endforeach
@@ -115,4 +118,50 @@
 @section('script')
     <script src="/../assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
     <script src="/../assets/js/datatable.js"></script>
+
+    <script src="/../assets/extensions/sweetalert2/sweetalert2.min.js"></script>
+    <script src="/../assets/js/sweetalert2.js"></script>
+    <script>
+        @if (session('success'))
+        Swal2.fire({
+            icon: "success",
+            title: "Success",
+            text: "{{ session('success') }}",
+        })
+        @endif
+        @if (session('error'))
+        Swal2.fire({
+            icon: "error",
+            title: "Error",
+            text: "{{ session('error') }}",
+        })
+        @endif
+    </script>
+
+    <script>
+        // Menambahkan event listener ke setiap tombol hapus tugas
+        const deleteButtons = document.querySelectorAll('.delete-task-btn');
+
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault(); // Mencegah tindakan default (penghapusan langsung)
+                const taskForm = button.parentElement; // Form yang berisi tombol yang ditekan
+
+                Swal2.fire({
+                    icon: 'question',
+                    title: 'Confirmation',
+                    text: 'Are you sure you want to delete this task?',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Yes',
+                    cancelButtonText: 'Cancel'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        taskForm.submit(); // Melanjutkan penghapusan jika dikonfirmasi
+                    }
+                });
+            });
+        });
+    </script>
 @endsection
