@@ -49,17 +49,17 @@ class SettingsController extends Controller
 
         if (Hash::check($request->current_password, $current_password)) {
             if (Hash::check($request->password, $current_password)) {
-                return redirect('/settings')->with('error', 'New password can not be the old password!' );
+                return redirect('/settings')->with('error', 'The new password cannot be the same as the old password!' );
             }
             else{
                 $users = User::query()->find(auth()->user()->user_id);
                 $users->password = Hash::make($validated['password']);
                 $users->save();
-                return redirect('/settings')->with('success', 'Passwword has been updated!' );
+                return redirect('/settings')->with('success', 'Password has been updated!' );
             }
         }
         else{
-            return redirect('/settings')->with('error', 'Old password doesnt matched' );
+            return redirect('/settings')->with('error', 'The old password does not match.' );
         }
     }
 }
