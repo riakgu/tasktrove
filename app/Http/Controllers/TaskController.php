@@ -41,7 +41,7 @@ class TaskController extends Controller
             'task_name' => 'required',
             'description' => 'required',
             'started' => 'required',
-            'deadline' => 'required',
+            'deadline' => 'required|after_or_equal:started',
             'status' => 'required',
         ]);
 
@@ -87,7 +87,7 @@ class TaskController extends Controller
             'task_name' => 'required',
             'description' => 'required',
             'started' => 'required',
-            'deadline' => 'required',
+            'deadline' => 'required|after_or_equal:started',
             'status' => 'required',
         ]);
 
