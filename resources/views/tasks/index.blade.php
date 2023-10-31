@@ -18,9 +18,9 @@
                     </div>
                 </div>
 
-{{--                <div class="col-12 col-md-6 mb-4 order-md-1 order-last">--}}
-{{--                    <a href="#" class="btn icon icon-left btn-secondary"><i data-feather="edit"></i> Add Task</a>--}}
-{{--                </div>--}}
+            {{--<div class="col-12 col-md-6 mb-4 order-md-1 order-last">--}}
+                {{--<a href="#" class="btn icon icon-left btn-secondary"><i data-feather="edit"></i> Add Task</a>--}}
+            {{--</div>--}}
 
             </div>
             <section class="section">

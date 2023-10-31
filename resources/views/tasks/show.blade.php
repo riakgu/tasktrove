@@ -17,7 +17,6 @@
                 </div>
             </div>
 
-            <!-- // Basic multiple Column Form section start -->
             <section id="multiple-column-form">
                 <div class="row match-height">
                     <div class="col-12">
@@ -66,7 +65,6 @@
                     </div>
                 </div>
             </section>
-            <!-- // Basic multiple Column Form section end -->
         </div>
 
     </div>

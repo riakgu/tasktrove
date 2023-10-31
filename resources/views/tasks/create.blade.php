@@ -28,7 +28,6 @@
                 </div>
             </div>
 
-            <!-- // Basic multiple Column Form section start -->
             <section id="multiple-column-form">
                 <div class="row match-height">
                     <div class="col-12">
@@ -119,9 +118,6 @@
                                                 <button type="submit" class="btn btn-primary me-1 mb-1">
                                                     Submit
                                                 </button>
-                                                <button type="reset" class="btn btn-light-secondary me-1 mb-1">
-                                                    Reset
-                                                </button>
                                             </div>
                                         </div>
                                     </form>
@@ -131,7 +127,6 @@
                     </div>
                 </div>
             </section>
-            <!-- // Basic multiple Column Form section end -->
         </div>
 
     </div>
