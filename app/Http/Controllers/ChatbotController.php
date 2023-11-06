@@ -40,8 +40,8 @@ class ChatbotController extends Controller
 
             return response()->json($data['choices'][0]['message']['content']);
         } catch (\Exception $e) {
-            return response()->json('An error occurred while processing your request');
-            // return response()->json($data['error']['message']);
+            //return response()->json('An error occurred while processing your request');
+            return response()->json($data['error']['message']);
         }
     }
 
