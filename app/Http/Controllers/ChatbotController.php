@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use function PHPUnit\Framework\isNull;
 
 class ChatbotController extends Controller
 {
@@ -40,9 +41,44 @@ class ChatbotController extends Controller
 
             return response()->json($data['choices'][0]['message']['content']);
         } catch (\Exception $e) {
-            //return response()->json('An error occurred while processing your request');
-            return response()->json($data['error']['message']);
+            if ($data['error']['message'] != null) {
+                return response()->json($data['error']['message']);
+            } else {
+                return response()->json('An error occurred while processing your request');
+            }
         }
     }
 
+    public function pplx(Request $request) {
+        $message = $request->input('message');
+
+        try {
+            $data = Http::withHeaders([
+                'Accept' => 'application/json',
+                'Authorization' => 'Bearer ' . env('PPLX_API_KEY'), // Change to your Perplexity API key
+                'Content-Type' => 'application/json'
+            ])->post('https://api.perplexity.ai/chat/completions', [
+                'model' => 'codellama-34b-instruct',
+                'messages' =>
+                    [
+                        [
+                            'role' => 'system',
+                            'content' => 'Be precise and concise.'
+                        ],
+                        [
+                            'role' => 'user',
+                            'content' => $message
+                        ]
+                    ]
+            ])->json();
+
+            return response()->json($data['choices'][0]['message']['content']);
+        } catch (\Exception $e) {
+            if ($data['error']['message'] != null) {
+                return response()->json($data['error']['message']);
+            } else {
+                return response()->json('An error occurred while processing your request');
+            }
+        }
+    }
 }
