@@ -19,7 +19,7 @@ class TaskSeeder extends Seeder
             'description' => 'TaskTrove',
             'started' => '2023-10-21',
             'deadline' => '2023-10-25',
-            'status' => '1',
+            'status' => 'TO_DO',
         ]);
     }
 }

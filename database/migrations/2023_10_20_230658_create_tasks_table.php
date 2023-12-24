@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text("description");
             $table->date("started");
             $table->date("deadline");
-            $table->enum("status", ["1", "2", "3"]);
+            $table->enum("status", ["TO_DO", "IN_PROGRESS", "DONE"]);
             $table->timestamps();
             $table->foreign("user_id")->references("user_id")->on("users");
         });
