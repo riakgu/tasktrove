@@ -47,7 +47,12 @@ class AuthController extends Controller
         $validated = $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
-            'password' => 'required|confirmed|min:8',
+            'password' => [
+                'required',
+                'confirmed',
+                'min:8',
+                //'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>]).+$/'
+            ],
         ]);
 
         $validated['password'] = Hash::make($validated['password']);
