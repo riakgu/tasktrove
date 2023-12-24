@@ -46,12 +46,11 @@
                                                 <label for="last-name-column">Status</label>
                                                 <div class="input-group mb-3">
                                                     <label class="input-group-text" for="status">Options</label>
-                                                    <select class="form-select @error('status') is-invalid @enderror"
-                                                            name="status">
-                                                        <option selected value="{{ old('status', $task->status) }}">Choose...</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
+                                                    <select class="form-select @error('status') is-invalid @enderror" name="status">
+                                                         <!-- Add PHP to check if the old value or current task status matches the option value -->
+                                                        <option value="TO_DO" {{ (old('status', $task->status) == 'TO_DO') ? 'selected' : '' }}>To Do</option>
+                                                        <option value="IN_PROGRESS" {{ (old('status', $task->status) == 'IN_PROGRESS') ? 'selected' : '' }}>In Progress</option>
+                                                        <option value="DONE" {{ (old('status', $task->status) == 'DONE') ? 'selected' : '' }}>Done</option>
                                                     </select>
                                                     @error('status')
                                                     <div class="invalid-feedback">
@@ -61,6 +60,7 @@
                                                     @enderror
                                                 </div>
                                             </div>
+
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="started">Started</label>

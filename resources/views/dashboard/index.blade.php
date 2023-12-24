@@ -73,15 +73,15 @@
                                     <td>{{ $task->description }}</td>
                                     <td>{{ $task->started }}</td>
                                     <td>{{ $task->deadline }}</td>
-                                    @if ($task->status == '1')
+                                    @if ($task->status == 'TO_DO')
                                         <td>
                                             <span class="badge bg-secondary">To Do</span>
                                         </td>
-                                    @elseif($task->status == '2')
+                                    @elseif($task->status == 'IN_PROGRESS')
                                         <td>
                                             <span class="badge bg-info">In Progress</span>
                                         </td>
-                                    @elseif($task->status == '3')
+                                    @elseif($task->status == 'DONE')
                                         <td>
                                             <span class="badge bg-success">Done</span>
                                         </td>

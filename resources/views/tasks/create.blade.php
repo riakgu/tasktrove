@@ -44,12 +44,12 @@
                                                 <label for="last-name-column">Status</label>
                                                 <div class="input-group mb-3">
                                                     <label class="input-group-text" for="status">Options</label>
-                                                    <select class="form-select @error('status') is-invalid @enderror"
-                                                            name="status">
-                                                        <option selected value="{{ old('status') }}">Choose...</option>
-                                                        <option value="1">To Do</option>
-                                                        <option value="2">In Progress</option>
-                                                        <option value="3">Done</option>
+                                                    <select class="form-select @error('status') is-invalid @enderror" name="status">>
+
+                                                        <!-- Ensure old values are selected if form is returned with errors -->
+                                                        <option value="TO_DO" {{ old('status') == 'TO_DO' ? 'selected' : '' }}>To Do</option>
+                                                        <option value="IN_PROGRESS" {{ old('status') == 'IN_PROGRESS' ? 'selected' : '' }}>In Progress</option>
+                                                        <option value="DONE" {{ old('status') == 'DONE' ? 'selected' : '' }}>Done</option>
                                                     </select>
                                                     @error('status')
                                                     <div class="invalid-feedback">
