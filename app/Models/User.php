@@ -11,16 +11,31 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+    use HasFactory, Notifiable, HasApiTokens;
+
+    // Menetapkan nama tabel yang terkait dengan model ini
     protected $table = "users";
+
+    // Menetapkan kunci utama untuk model ini
     protected $primaryKey = "user_id";
+
+    // Menentukan field yang bisa diisi melalui mass assignment
     protected $fillable = [
         'name',
         'email',
         'password',
     ];
 
-    public function task(): HasMany
+    /**
+     * Mendefinisikan hubungan 'hasMany' dengan model Task.
+     *
+     * @return HasMany Hubungan antara User dan Task
+     */
+    public function tasks(): HasMany
     {
-        return $this->hasMany(Task::class, "task_id", "user_id");
+        // Mengembalikan instance hubungan yang menunjukkan bahwa User dapat memiliki banyak Task
+        return $this->hasMany(Task::class, 'user_id', 'user_id');
     }
+
 }
+

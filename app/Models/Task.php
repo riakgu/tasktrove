@@ -8,8 +8,15 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Task extends Model
 {
+    use HasFactory;
+
+    // Menetapkan nama tabel yang terkait dengan model ini
     protected $table = 'tasks';
+
+    // Menetapkan kunci utama untuk model ini
     protected $primaryKey = 'task_id';
+
+    // Menentukan field yang bisa diisi melalui mass assignment
     protected $fillable = [
         'user_id',
         'task_name',
@@ -19,8 +26,14 @@ class Task extends Model
         'status',
     ];
 
-    public function user(): BelongsTo
+    /**
+     * Mendefinisikan hubungan 'belongsTo' dengan model User.
+     *
+     * @return BelongsTo Hubungan antara Task dan User
+     */
+    public function users(): BelongsTo
     {
-        return $this->belongsTo(User::class, "user_id", "task_id");
+        // Mengembalikan instance hubungan yang menunjukkan bahwa setiap Task milik sebuah User
+        return $this->belongsTo(User::class, 'user_id', 'user_id');
     }
 }
