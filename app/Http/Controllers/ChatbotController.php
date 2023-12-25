@@ -8,18 +8,31 @@ use function PHPUnit\Framework\isNull;
 
 class ChatbotController extends Controller
 {
+    /**
+     * Menampilkan halaman utama chatbot.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function index() {
         $data = [
             "title" => "Chatbot",
         ];
 
+        // Mengembalikan view chatbot dengan judul halaman
         return view('chatbot.index', $data);
     }
 
+    /**
+     * Mengirim pesan ke API OpenAI dan mendapatkan balasan.
+     *
+     * @param Request $request Data request dari pengguna.
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function chatbot(Request $request) {
         $message = $request->input('message');
 
         try {
+            // Membuat request ke API OpenAI
             $data = Http::withHeaders([
                 'Content-Type' => 'application/json',
                 'Authorization' => 'Bearer ' . env('OPENAI_API_KEY')
@@ -39,23 +52,28 @@ class ChatbotController extends Controller
                 'stop' => ['11.']
             ])->json();
 
+            // Mengembalikan respon chat dari API
             return response()->json($data['choices'][0]['message']['content']);
         } catch (\Exception $e) {
-            if ($data['error']['message'] != null) {
-                return response()->json($data['error']['message']);
-            } else {
-                return response()->json('An error occurred while processing your request');
-            }
+            // Mengembalikan pesan error jika terjadi kegagalan request
+            return response()->json('Terjadi kesalahan saat memproses permintaan Anda');
         }
     }
 
+    /**
+     * Mengirim pesan ke API Perplexity dan mendapatkan balasan.
+     *
+     * @param Request $request Data request dari pengguna.
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function pplx(Request $request) {
         $message = $request->input('message');
 
         try {
+            // Membuat request ke API Perplexity
             $data = Http::withHeaders([
                 'Accept' => 'application/json',
-                'Authorization' => 'Bearer ' . env('PPLX_API_KEY'), // Change to your Perplexity API key
+                'Authorization' => 'Bearer ' . env('PPLX_API_KEY'),
                 'Content-Type' => 'application/json'
             ])->post('https://api.perplexity.ai/chat/completions', [
                 'model' => 'codellama-34b-instruct',
@@ -72,13 +90,12 @@ class ChatbotController extends Controller
                     ]
             ])->json();
 
+            // Mengembalikan respon chat dari API
             return response()->json($data['choices'][0]['message']['content']);
         } catch (\Exception $e) {
-            if ($data['error']['message'] != null) {
-                return response()->json($data['error']['message']);
-            } else {
-                return response()->json('An error occurred while processing your request');
-            }
+            // Mengembalikan pesan error jika terjadi kegagalan request
+            return response()->json('Terjadi kesalahan saat memproses permintaan Anda');
         }
     }
 }
+
