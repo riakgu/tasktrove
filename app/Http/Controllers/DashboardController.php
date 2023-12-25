@@ -19,7 +19,7 @@ class DashboardController extends Controller
                 ->count(),
             "undone_task" => Task::query()
                 ->where('user_id', auth()->user()->user_id)
-                ->whereNot('status', '3')
+                ->whereNot('status', 'DONE')
                 ->count()
         ];
 
