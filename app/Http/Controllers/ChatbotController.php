@@ -28,7 +28,7 @@ class ChatbotController extends Controller
      * @param Request $request Data request dari pengguna.
      * @return \Illuminate\Http\JsonResponse
      */
-    public function chatbot(Request $request) {
+    public function openai(Request $request) {
         $message = $request->input('message');
 
         try {
