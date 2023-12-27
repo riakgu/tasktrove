@@ -20,17 +20,24 @@ DB_USERNAME=your-username
 DB_PASSWORD=your-password
 ```
 
-3. Migration
+3. Chatbot configuration through the `.env` file
+
+```conf
+OPENAI_API_KEY=your-openai-api
+PPLX_API_KEY=your-pplx-api
+```
+
+4. Migration
 
 ```bash
 php artisan key:generate
 php artisan migrate --seed
 ```
 
-4. Run it locally
+5. Run it locally
 
 ```bash
 php artisan serve
 ```
 
-5. Open `http://127.0.0.1:8000` in your browser
+6. Open `http://127.0.0.1:8000` in your browser
