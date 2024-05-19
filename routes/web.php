@@ -33,7 +33,7 @@ Route::resource('tasks', \App\Http\Controllers\TaskController::class)->middlewar
 
 Route::controller(\App\Http\Controllers\ChatbotController::class)->group(function () {
     Route::get('/chatbot', 'index')->middleware('auth');
-    Route::post('/chatbot', 'pplx')->middleware('auth');
+    Route::post('/chatbot', 'openai')->middleware('auth');
 });
 
 Route::controller(\App\Http\Controllers\SettingsController::class)->group(function () {
